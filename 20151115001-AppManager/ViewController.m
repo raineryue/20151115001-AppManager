@@ -16,6 +16,7 @@
 
 @interface ViewController ()
 
+/** 数据数组 */
 @property (nonatomic, strong) NSArray *appArray;
 
 @end
@@ -25,10 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 初始化子控件
     [self setupSubviews];
 }
 
 - (void)setupSubviews {
+    // 1.初始化应用列表
     CGFloat appViewMargineX = (self.view.bounds.size.width - kAppViewW * kColumnCount) / (kColumnCount + 1);
     
     for (int i = 0; i < self.appArray.count; i++) {
@@ -38,6 +41,7 @@
         // 2.当前列
         int appClo = i % kColumnCount;
         
+        // 3.设置每个app的位置大小
         CGFloat appViewX = appViewMargineX + (appViewMargineX + kAppViewW) * appClo;
         CGFloat appViewY = kStartAppViewY + appViewMargineX + (kStartAppViewY + kAppViewH) * appRow;
         
@@ -48,6 +52,9 @@
     }
 }
 
+/**
+ *  懒加载获取数据
+ */
 - (NSArray *)appArray {
     if (nil == _appArray) {
         _appArray = [AppInfoModel appInfoList];

@@ -42,15 +42,45 @@
         
         // 3.下载按钮
         UIButton *downloadButton = [[UIButton alloc] init];
-        downloadButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        downloadButton.titleLabel.font = [UIFont systemFontOfSize:13];
         [downloadButton setBackgroundImage:[UIImage imageNamed:@"buttongreen"] forState:UIControlStateNormal];
         [downloadButton setBackgroundImage:[UIImage imageNamed:@"buttongreen_highlighted"] forState:UIControlStateHighlighted];
+        [downloadButton addTarget:self action:@selector(downloadButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];
         self.downloadButton = downloadButton;
         
         [self addSubview:self.downloadButton];
     }
     
     return self;
+}
+
+/**
+ *  下载按钮点击事件处理
+ */
+- (void)downloadButtonClickAction:(UIButton *)button {
+    // 1.创建下载提示控件
+    UILabel *messageLabel = [[UILabel alloc] init];
+    
+    CGFloat messageLabelW = 150;
+    CGFloat messageLabelH = 35;
+    CGFloat messageLabelX = ([UIScreen mainScreen].bounds.size.width - messageLabelW) * 0.5;
+    CGFloat messageLabelY = [UIScreen mainScreen].bounds.size.height - 30 - messageLabelH;
+    
+    messageLabel.frame = CGRectMake(messageLabelX, messageLabelY, messageLabelW, messageLabelH);
+    messageLabel.text = [NSString stringWithFormat:@"%@下载完成",self.appInfo.name];
+    messageLabel.font = [UIFont systemFontOfSize:13];
+    messageLabel.textAlignment = NSTextAlignmentCenter;
+    messageLabel.backgroundColor = [UIColor lightGrayColor];
+    messageLabel.alpha = 1.0f;
+    
+    [self.superview addSubview:messageLabel];
+
+    // 2.动画显示和隐藏提示控件
+    [UIView animateWithDuration:2.0 animations:^{
+        messageLabel.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [messageLabel removeFromSuperview];
+    }];
 }
 
 /**
@@ -86,6 +116,9 @@
     self.downloadButton.frame = CGRectMake(downloadButtonX, downloadButtonY, downloadButtonW, downloadButtonH);
 }
 
+/**
+ *  复写appInfo的setter方法填充子试图值
+ */
 - (void)setAppInfo:(AppInfoModel *)appInfo {
     _appInfo = appInfo;
     
