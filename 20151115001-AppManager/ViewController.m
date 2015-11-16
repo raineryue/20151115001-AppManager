@@ -7,8 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "AppView.h"
+
+#define kColumnCount 3
+#define kAppViewW 80
+#define kAppViewH 90
+#define kStartAppViewY 10
 
 @interface ViewController ()
+
+@property (nonatomic, strong) NSArray *appArray;
 
 @end
 
@@ -16,12 +24,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setupSubviews];
+}
+
+- (void)setupSubviews {
+    CGFloat appViewMargineX = (self.view.bounds.size.width - kAppViewW * kColumnCount) / (kColumnCount + 1);
+    
+    for (int i = 0; i < self.appArray.count; i++) {
+        // 1.当前行
+        int appRow = i / kColumnCount;
+
+        // 2.当前列
+        int appClo = i % kColumnCount;
+        
+        CGFloat appViewX = appViewMargineX + (appViewMargineX + kAppViewW) * appClo;
+        CGFloat appViewY = kStartAppViewY + appViewMargineX + (kStartAppViewY + kAppViewH) * appRow;
+        
+        AppView *appView = [[AppView alloc] initWithFrame:CGRectMake(appViewX, appViewY, kAppViewW, kAppViewH)];
+        appView.appInfo = self.appArray[i];
+        
+        [self.view addSubview:appView];
+    }
+}
+
+- (NSArray *)appArray {
+    if (nil == _appArray) {
+        _appArray = [AppInfoModel appInfoList];
+    }
+    
+    return _appArray;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
