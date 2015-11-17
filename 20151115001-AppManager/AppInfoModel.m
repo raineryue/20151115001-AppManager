@@ -49,4 +49,15 @@
     return appInfoArray;
 }
 
+/**
+ *  懒加载应用图片
+ */
+- (UIImage *)iconImage {
+    if (nil == _iconImage) {
+        _iconImage = [UIImage imageNamed:self.icon];
+    }
+    
+    return _iconImage;
+}
+
 @end

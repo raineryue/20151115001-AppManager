@@ -6,6 +6,7 @@
 //  Copyright © 2015年 Rainer. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface AppInfoModel : NSObject
@@ -13,8 +14,11 @@
 /** 应用名称 */
 @property (nonatomic, copy) NSString *name;
 
-/** 应用图片 */
+/** 应用图片名称 */
 @property (nonatomic, copy) NSString *icon;
+
+/** 应用图片 */
+@property (nonatomic, strong) UIImage *iconImage;
 
 /**
  *  通过字典初始化本类对象（对象方法）
