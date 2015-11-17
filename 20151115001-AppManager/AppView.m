@@ -122,7 +122,7 @@
 - (void)setAppInfo:(AppInfoModel *)appInfo {
     _appInfo = appInfo;
     
-    self.iconImageView.image = [UIImage imageNamed:appInfo.icon];
+    self.iconImageView.image = appInfo.iconImage;
     self.appNameLabel.text = appInfo.name;
     [self.downloadButton setTitle:@"下载" forState:UIControlStateNormal];
 }
