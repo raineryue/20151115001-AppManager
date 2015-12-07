@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5C8869B1BF8D0420004AD60"
-               BuildableName = "20151115001-AppManager.app"
-               BlueprintName = "20151115001-AppManager"
-               ReferencedContainer = "container:20151115001-AppManager.xcodeproj">
+               BuildableName = "20151207002-AppManager-Delegate.app"
+               BlueprintName = "20151207002-AppManager-Delegate"
+               ReferencedContainer = "container:20151207002-AppManager-Delegate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5C886B41BF8D0420004AD60"
-               BuildableName = "20151115001-AppManagerTests.xctest"
-               BlueprintName = "20151115001-AppManagerTests"
-               ReferencedContainer = "container:20151115001-AppManager.xcodeproj">
+               BuildableName = "20151207002-AppManager-Delegate.xctest"
+               BlueprintName = "20151207002-AppManager-DelegateTests"
+               ReferencedContainer = "container:20151207002-AppManager-Delegate.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5C886BF1BF8D0420004AD60"
-               BuildableName = "20151115001-AppManagerUITests.xctest"
-               BlueprintName = "20151115001-AppManagerUITests"
-               ReferencedContainer = "container:20151115001-AppManager.xcodeproj">
+               BuildableName = "20151207002-AppManager-Delegate.xctest"
+               BlueprintName = "20151207002-AppManager-DelegateUITests"
+               ReferencedContainer = "container:20151207002-AppManager-Delegate.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5C8869B1BF8D0420004AD60"
-            BuildableName = "20151115001-AppManager.app"
-            BlueprintName = "20151115001-AppManager"
-            ReferencedContainer = "container:20151115001-AppManager.xcodeproj">
+            BuildableName = "20151207002-AppManager-Delegate.app"
+            BlueprintName = "20151207002-AppManager-Delegate"
+            ReferencedContainer = "container:20151207002-AppManager-Delegate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5C8869B1BF8D0420004AD60"
-            BuildableName = "20151115001-AppManager.app"
-            BlueprintName = "20151115001-AppManager"
-            ReferencedContainer = "container:20151115001-AppManager.xcodeproj">
+            BuildableName = "20151207002-AppManager-Delegate.app"
+            BlueprintName = "20151207002-AppManager-Delegate"
+            ReferencedContainer = "container:20151207002-AppManager-Delegate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5C8869B1BF8D0420004AD60"
-            BuildableName = "20151115001-AppManager.app"
-            BlueprintName = "20151115001-AppManager"
-            ReferencedContainer = "container:20151115001-AppManager.xcodeproj">
+            BuildableName = "20151207002-AppManager-Delegate.app"
+            BlueprintName = "20151207002-AppManager-Delegate"
+            ReferencedContainer = "container:20151207002-AppManager-Delegate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

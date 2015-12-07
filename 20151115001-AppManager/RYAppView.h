@@ -10,7 +10,19 @@
 #import <Foundation/Foundation.h>
 #import "AppInfoModel.h"
 
+@class RYAppView;
+
+@protocol RYAppViewDelegate <NSObject>
+
+@optional
+- (void)appView:(RYAppView *)appView downloadButtonDidClickAction:(UIButton *)downloadButton;
+
+@end
+
 @interface RYAppView : UIView
+
+@property (nonatomic, strong) AppInfoModel *appInfo;
+@property (nonatomic, weak) id<RYAppViewDelegate> delegate;
 
 /**
  *  根据应用信息初始化应用试图（对象方法）

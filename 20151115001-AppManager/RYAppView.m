@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *iconNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *iconDownloadButton;
 
-@property (nonatomic, strong) AppInfoModel *appInfo;
-
 @end
 
 @implementation RYAppView
@@ -43,25 +41,9 @@
  *  下载按钮点击事件处理方法
  */
 - (IBAction)iconDownloadButtonClickAction:(id)sender {
-    CGFloat messageLabelW = 150;
-    CGFloat messageLabelH = 40;
-    CGFloat messageLabelX = (self.superview.bounds.size.width - messageLabelW) * 0.5;
-    CGFloat messageLabelY = self.superview.bounds.size.height - 40 - 30;
-    
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(messageLabelX, messageLabelY, messageLabelW, messageLabelH)];
-    messageLabel.text = [NSString stringWithFormat:@"%@下载完成", self.appInfo.name];
-    messageLabel.backgroundColor = [UIColor lightGrayColor];
-    messageLabel.font = [UIFont systemFontOfSize:13];
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.alpha = 1.0;
-    
-    [self.superview addSubview:messageLabel];
-    
-    [UIView animateWithDuration:2.0 animations:^{
-        messageLabel.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        [messageLabel removeFromSuperview];
-    }];
+    if ([self.delegate respondsToSelector:@selector(appView:downloadButtonDidClickAction:)]) {
+        [self.delegate appView:self downloadButtonDidClickAction:sender];
+    }
 }
 
 /**
